@@ -1,0 +1,597 @@
+==============================================================================
+READ-ONLY SQL SCENARIOS
+Database: D:\Telegram Desktop\machine_project_reviewed_v4\machines.db
+Queries: 34
+==============================================================================
+
+[01] 01 - Overall database and price coverage
+------------------------------------------------------------------------------
+ total_machines  unique_machine_urls  machines_with_recorded_price  price_coverage_pct  average_recorded_price_usd  lowest_recorded_midpoint_usd  highest_recorded_midpoint_usd
+           3955                 3955                          1564               39.54                   646822.62                       32500.0                     11500000.0
+
+[02] 02 - Machine counts and price coverage by category
+------------------------------------------------------------------------------
+                Category  machine_count  priced_machine_count  price_coverage_pct
+              Cnc Lathes           1673                   694               41.48
+5 Axis Machining Centers           1161                   462               39.79
+   Cnc Grinding Machines            442                   157               35.52
+       Cnc Laser Cutting            359                   114               31.75
+     Cnc Boring Machines            237                    75               31.65
+        Cnc Gear Cutting             83                    62               74.70
+
+[03] 03 - Price summary by category, including median
+------------------------------------------------------------------------------
+                Category  priced_machine_count  average_price_usd  median_price_usd  min_price_usd  max_price_usd
+     Cnc Boring Machines                    75         1295866.67          950000.0       200000.0      6500000.0
+        Cnc Gear Cutting                    62          998225.81          787500.0       140000.0      6500000.0
+5 Axis Machining Centers                   462         1088748.65          600000.0       104995.0     10500000.0
+       Cnc Laser Cutting                   114          627096.49          550000.0        44000.0      2750000.0
+   Cnc Grinding Machines                   157          502563.69          425000.0        32500.0      2750000.0
+              Cnc Lathes                   694          286970.04          200000.0        32995.0     11500000.0
+
+[04] 04 - Manufacturers with the most machines and their price coverage
+------------------------------------------------------------------------------
+          Manufacturer  machine_count  priced_machine_count  price_coverage_pct  average_recorded_price_usd
+          DN Solutions            213                   213              100.00                   493769.95
+              Johnford            155                     0                0.00                         NaN
+        Yamazaki Mazak            153                   152               99.35                   373026.32
+              DMG Mori            142                   122               85.92                   931577.87
+                  AWEA            121                     0                0.00                         NaN
+                   HNK             97                     0                0.00                         NaN
+              Hartford             93                     0                0.00                         NaN
+       Haas Automation             85                    85              100.00                   200518.65
+               Accuway             83                     0                0.00                         NaN
+                 Huron             76                     0                0.00                         NaN
+                 Okuma             71                    71              100.00                   428204.23
+           Hyundai WIA             70                    70              100.00                   230107.14
+               Palmary             66                     0                0.00                         NaN
+GF Machining Solutions             57                    57              100.00                  1291754.39
+   Chevalier Machinery             56                     1                1.79                    32500.00
+               Goodway             54                     0                0.00                         NaN
+                You Ji             52                     0                0.00                         NaN
+              Hardinge             51                    51              100.00                   236078.43
+                  EMAG             51                    50               98.04                   538200.00
+              Hwacheon             48                     6               12.50                   142083.33
+                Feeler             47                     0                0.00                         NaN
+           Vision Wide             46                     0                0.00                         NaN
+           Honor Seiki             44                     0                0.00                         NaN
+     Citizen Machinery             42                    42              100.00                   238154.76
+                Makino             41                    40               97.56                  1230875.00
+
+[05] 05 - Manufacturers with many listings but weak price coverage
+------------------------------------------------------------------------------
+   Manufacturer  machine_count  priced_machine_count  price_coverage_pct
+       Johnford            155                     0                 0.0
+           AWEA            121                     0                 0.0
+            HNK             97                     0                 0.0
+       Hartford             93                     0                 0.0
+        Accuway             83                     0                 0.0
+          Huron             76                     0                 0.0
+        Palmary             66                     0                 0.0
+        Goodway             54                     0                 0.0
+         You Ji             52                     0                 0.0
+         Feeler             47                     0                 0.0
+    Vision Wide             46                     0                 0.0
+    Honor Seiki             44                     0                 0.0
+Victor Taichung             38                     0                 0.0
+       Jainnher             37                     0                 0.0
+           Romi             37                     0                 0.0
+          Yawei             36                     0                 0.0
+          Sharp             35                     0                 0.0
+     Colchester             32                     0                 0.0
+        Danobat             32                     0                 0.0
+         Campro             30                     0                 0.0
+            YCM             29                     0                 0.0
+          Dener             28                     0                 0.0
+       Hedelius             28                     0                 0.0
+          Ecoca             27                     0                 0.0
+      TOS Kuřim             27                     0                 0.0
+          Fryer             25                     0                 0.0
+       Pinnacle             24                     0                 0.0
+    Akira Seiki             23                     0                 0.0
+          Ermak             23                     0                 0.0
+       Supertec             20                     0                 0.0
+
+[06] 06 - Specification completeness by category
+------------------------------------------------------------------------------
+                Category  machine_count  with_x_travel  x_travel_coverage_pct  with_y_travel  y_travel_coverage_pct  with_z_travel  z_travel_coverage_pct  with_spindle_power  with_spindle_rpm  with_machine_weight_kg  with_tool_capacity
+              Cnc Lathes           1673           1114                   66.6            280                   16.7            975                   58.3                 549              1241                     943                 181
+5 Axis Machining Centers           1161            951                   81.9            956                   82.3            806                   69.4                 329               793                     440                 488
+   Cnc Grinding Machines            442            168                   38.0             60                   13.6            156                   35.3                 103                83                     218                  12
+       Cnc Laser Cutting            359            151                   42.1            149                   41.5            151                   42.1                   0                 2                     111                   0
+     Cnc Boring Machines            237            134                   56.5            140                   59.1            133                   56.1                  56               161                      69                  57
+        Cnc Gear Cutting             83              7                    8.4              7                    8.4              7                    8.4                   6                 3                      32                   1
+
+[07] 07 - Machine finder: example requirements under USD 500,000
+------------------------------------------------------------------------------
+         Machine Name    Manufacturer                 Category  price_mid_usd  x_travel_mm  y_travel_mm  z_travel_mm  spindle_power_kw  max_spindle_rpm  tool_capacity
+        Hurco VMX42Ui           Hurco 5 Axis Machining Centers       210000.0       1067.0        610.0        521.0              18.0          12000.0           40.0
+       Hurco VMX42SWi           Hurco 5 Axis Machining Centers       235000.0       1067.0        610.0        610.0              36.5          12000.0           40.0
+       Hurco VMX42UDi           Hurco 5 Axis Machining Centers       240000.0       1067.0        610.0        520.0              18.0          15000.0           40.0
+          Hurco BX60i           Hurco      Cnc Boring Machines       242500.0       1600.0       1300.0        700.0              35.0          20000.0           30.0
+      Hurco VMX42UHSi           Hurco 5 Axis Machining Centers       265000.0       1067.0        610.0        520.0              35.0          18000.0           40.0
+      Haas UMC-1000SS Haas Automation 5 Axis Machining Centers       286995.0       1016.0        635.0        635.0              22.4          12000.0           30.0
+      Hurco VMX42SRTi           Hurco 5 Axis Machining Centers       290000.0       1067.0        610.0        610.0              36.5          12000.0           40.0
+        Hurco VMX60Ui           Hurco 5 Axis Machining Centers       290000.0       1524.0        660.0        520.0              18.0          12000.0           40.0
+        Haas GM-1-5AX Haas Automation 5 Axis Machining Centers       299995.0       3073.0       1549.0        610.0              11.2          24000.0           30.0
+       Hurco VMX60SWi           Hurco 5 Axis Machining Centers       310000.0       1524.0        661.0        610.0              36.5          12000.0           40.0
+    Haas UMC-1000SS-P Haas Automation 5 Axis Machining Centers       311995.0       1016.0        635.0        635.0              22.4          12000.0           30.0
+  Haas UMC-1500SS-DUO Haas Automation 5 Axis Machining Centers       311995.0       1524.0        508.0        508.0              22.4          12000.0           30.0
+        Hurco BX 400i           Hurco 5 Axis Machining Centers       315000.0       1020.0        700.0        500.0              35.0          20000.0           30.0
+      Haas GM-1XT-5AX Haas Automation 5 Axis Machining Centers       339995.0       3613.0       1549.0        610.0              11.2          24000.0           30.0
+     Hurco VMX42HSRTi           Hurco 5 Axis Machining Centers       350000.0       1067.0        610.0        610.0              37.0          24000.0           40.0
+      Haas UMC-1250SS Haas Automation 5 Axis Machining Centers       359995.0       1270.0        762.0        711.0              22.4          12000.0           30.0
+      Hurco VMX60SRTi           Hurco 5 Axis Machining Centers       370000.0       1524.0        661.0        610.0              36.5          12000.0           40.0
+        Haas GM-2-5AX Haas Automation 5 Axis Machining Centers       399995.0       3683.0       2223.0        998.0              12.0          20000.0           30.0
+DN Solutions DVF 8000    DN Solutions 5 Axis Machining Centers       400000.0       1000.0        900.0        685.0               NaN          18000.0           40.0
+       Hurco VMX84SWi           Hurco 5 Axis Machining Centers       405000.0       2134.0        864.0        762.0              36.5          12000.0           40.0
+   Haas UMC-1250SS-50 Haas Automation 5 Axis Machining Centers       411995.0       1270.0        762.0        711.0              44.7          12000.0           30.0
+            Makino D2          Makino 5 Axis Machining Centers       425000.0       2200.0       2300.0       1100.0               NaN          15000.0            NaN
+
+[08] 08 - Highest spindle speed among machines with known prices
+------------------------------------------------------------------------------
+                                Machine Name             Manufacturer                 Category  max_spindle_rpm  spindle_power_kw  price_mid_usd price_type
+                                 Studer S121 United Grinding (Studer)    Cnc Grinding Machines         120000.0              18.0       480000.0   estimate
+                                 Studer S131 United Grinding (Studer)    Cnc Grinding Machines         120000.0              15.0       625000.0   estimate
+                                 Studer S141 United Grinding (Studer)    Cnc Grinding Machines         120000.0              18.0       675000.0   estimate
+                                 Studer S151 United Grinding (Studer)    Cnc Grinding Machines         120000.0              18.0       900000.0   estimate
+                   Hardinge Kellenberger K10                 Hardinge    Cnc Grinding Machines          60000.0               7.5       285000.0   estimate
+                               Chiron Micro5                   Chiron 5 Axis Machining Centers          60000.0               NaN       300000.0   estimate
+                     Chiron Micro5 Five Axis                   Chiron 5 Axis Machining Centers          60000.0               NaN       375000.0   estimate
+                                 Studer S100 United Grinding (Studer)    Cnc Grinding Machines          60000.0               6.8       390000.0   estimate
+                      DMG Mori DMU 20 Linear                 DMG Mori 5 Axis Machining Centers          60000.0               NaN       425000.0   estimate
+                      DMG Mori HSC 20 linear                 DMG Mori 5 Axis Machining Centers          60000.0               NaN       450000.0   estimate
+                               Röders RFM600                   Röders 5 Axis Machining Centers          60000.0              17.0       450000.0   estimate
+DMG Mori ULTRASONIC 20 linear 3rd Generation                 DMG Mori 5 Axis Machining Centers          60000.0               NaN       500000.0   estimate
+                               Röders RFM800                   Röders 5 Axis Machining Centers          60000.0              20.0       535000.0   estimate
+                            Röders RXP601 DS                   Röders 5 Axis Machining Centers          60000.0              17.0       700000.0   estimate
+                            Chiron Micro5 XL                   Chiron 5 Axis Machining Centers          50000.0               NaN       412500.0   estimate
+                                    Kern Evo        Kern Microtechnik 5 Axis Machining Centers          50000.0               6.4       525000.0   estimate
+                        FANUC RoboNano a-0iB                    FANUC 5 Axis Machining Centers          50000.0               NaN       750000.0   estimate
+                             Matsuura LX-160                 Matsuura 5 Axis Machining Centers          46000.0              11.0       400000.0   estimate
+                          Matsuura MAM72-3VS                 Matsuura 5 Axis Machining Centers          46000.0              15.0       675000.0   estimate
+                             Mazak UD-400/5X           Yamazaki Mazak 5 Axis Machining Centers          45000.0              11.0       650000.0   estimate
+                             Chiron FZ 08 FX                   Chiron 5 Axis Machining Centers          42000.0               NaN       330000.0   estimate
+                                 Hermle C 12                   Hermle 5 Axis Machining Centers          42000.0               NaN       362500.0   estimate
+                          Hermle C 12 U GEN2                   Hermle 5 Axis Machining Centers          42000.0               NaN       385000.0   estimate
+                               Hermle C 22 U                   Hermle 5 Axis Machining Centers          42000.0               NaN       425000.0   estimate
+                          Hermle C 22 U GEN2                   Hermle 5 Axis Machining Centers          42000.0               NaN       465000.0   estimate
+
+[09] 09 - Price midpoint bands and recorded counts
+------------------------------------------------------------------------------
+    price_band  machine_count  average_price_usd
+   Under $100k             93           74977.53
+$100k-$249,999            414          169555.06
+$250k-$499,999            459          358371.21
+$500k-$999,999            366          668624.30
+ $1m and above            232         2264021.53
+
+[10] 10 - Data-quality checks for key standardized fields
+------------------------------------------------------------------------------
+ total_machines  missing_urls  missing_machine_names  invalid_price_ranges  nonpositive_price_lows  nonpositive_price_highs  nonpositive_spindle_power  nonpositive_rpm  nonpositive_machine_weight  nonpositive_table_load  nonpositive_tool_capacity  nonpositive_x_travel  nonpositive_y_travel  nonpositive_z_travel
+           3955             0                      0                     0                       0                        0                          0                0                           0                       0                          0                     0                     0                     0
+
+[11] 11 - Price-type coverage
+------------------------------------------------------------------------------
+price_type  machine_count  pct_of_all_machines  average_midpoint_usd
+ (missing)           2391                60.46                   NaN
+  estimate           1480                37.42             672055.41
+    listed             84                 2.12             202245.00
+
+[12] 12 - Median price across all machines with recorded prices
+------------------------------------------------------------------------------
+ priced_machine_count  average_price_usd  median_price_usd
+                 1564          646822.62          375000.0
+
+[13] 13 - Median standardized capability by category
+------------------------------------------------------------------------------
+                Category              metric  machines_with_value  median_value
+5 Axis Machining Centers  Spindle power (kW)                  329          30.0
+5 Axis Machining Centers Spindle speed (RPM)                  793       18000.0
+5 Axis Machining Centers       X travel (mm)                  951        1400.0
+5 Axis Machining Centers       Y travel (mm)                  956        1100.0
+5 Axis Machining Centers       Z travel (mm)                  806         700.0
+     Cnc Boring Machines  Spindle power (kW)                   56          37.0
+     Cnc Boring Machines Spindle speed (RPM)                  161        3000.0
+     Cnc Boring Machines       X travel (mm)                  134        3000.0
+     Cnc Boring Machines       Y travel (mm)                  140        2000.0
+     Cnc Boring Machines       Z travel (mm)                  133        1300.0
+        Cnc Gear Cutting  Spindle power (kW)                    6          18.5
+        Cnc Gear Cutting Spindle speed (RPM)                    3        6000.0
+        Cnc Gear Cutting       X travel (mm)                    7        1000.0
+        Cnc Gear Cutting       Y travel (mm)                    7         361.0
+        Cnc Gear Cutting       Z travel (mm)                    7        1000.0
+   Cnc Grinding Machines  Spindle power (kW)                  103          12.5
+   Cnc Grinding Machines Spindle speed (RPM)                   83        4500.0
+   Cnc Grinding Machines       X travel (mm)                  168         380.0
+   Cnc Grinding Machines       Y travel (mm)                   60         400.0
+   Cnc Grinding Machines       Z travel (mm)                  156         600.0
+       Cnc Laser Cutting Spindle speed (RPM)                    2        2750.0
+       Cnc Laser Cutting       X travel (mm)                  151        4000.0
+       Cnc Laser Cutting       Y travel (mm)                  149        2020.0
+       Cnc Laser Cutting       Z travel (mm)                  151         290.0
+              Cnc Lathes  Spindle power (kW)                  549          22.0
+              Cnc Lathes Spindle speed (RPM)                 1241        3500.0
+              Cnc Lathes       X travel (mm)                 1114         290.0
+              Cnc Lathes       Y travel (mm)                  280          62.5
+              Cnc Lathes       Z travel (mm)                  975         820.0
+
+[14] 14 - Join validation: specification rows without a known machine URL
+------------------------------------------------------------------------------
+ orphan_spec_records
+                   0
+
+[15] 15 - Top 20 highest recorded prices (suspicious-value check)
+------------------------------------------------------------------------------
+                              Machine Name           Manufacturer                 Category  price_low_usd  price_high_usd  price_mid_usd price_type                                                                                  URL
+                 Starrag Dorries VC Series                Starrag               Cnc Lathes      3000000.0      20000000.0     11500000.0   estimate                  https://www.machinetoolindex.com/machines/starrag-dorries-vc-series
+               Starrag Dorries VC-V Series                Starrag               Cnc Lathes      3000000.0      20000000.0     11500000.0   estimate                https://www.machinetoolindex.com/machines/starrag-dorries-vc-v-series
+                         Fooke Endura 1204                  Fooke 5 Axis Machining Centers      6000000.0      15000000.0     10500000.0   estimate                          https://www.machinetoolindex.com/machines/fooke-endura-1204
+            Starrag Droop+Rein G/GF Series                Starrag 5 Axis Machining Centers      5000000.0      15000000.0     10000000.0   estimate          https://www.machinetoolindex.com/machines/starrag-droop-plusrein-ggf-series
+                     DMG Mori DMU 600 p FD               DMG Mori 5 Axis Machining Centers      5000000.0      12000000.0      8500000.0   estimate                      https://www.machinetoolindex.com/machines/dmg-mori-dmu-600-p-fd
+            Starrag Droop+Rein T/TF Series                Starrag 5 Axis Machining Centers      4000000.0      12000000.0      8000000.0   estimate          https://www.machinetoolindex.com/machines/starrag-droop-plusrein-ttf-series
+            DMG Mori DMU 600 Gantry linear               DMG Mori 5 Axis Machining Centers      4000000.0      10000000.0      7000000.0   estimate             https://www.machinetoolindex.com/machines/dmg-mori-dmu-600-gantry-linear
+                        DMG Mori DMU 600 P               DMG Mori 5 Axis Machining Centers      4000000.0      10000000.0      7000000.0   estimate                         https://www.machinetoolindex.com/machines/dmg-mori-dmu-600-p
+                             Makino MAG A9                 Makino 5 Axis Machining Centers      5000000.0       8000000.0      6500000.0   estimate                              https://www.machinetoolindex.com/machines/makino-mag-a9
+            Starrag Droop+Rein FOGS Series                Starrag 5 Axis Machining Centers      3000000.0      10000000.0      6500000.0   estimate         https://www.machinetoolindex.com/machines/starrag-droop-plusrein-fogs-series
+                 Waldrich Coburg MasterTec        Waldrich Coburg      Cnc Boring Machines      3000000.0      10000000.0      6500000.0   estimate                  https://www.machinetoolindex.com/machines/waldrich-coburg-mastertec
+                         KAPP NILES KNG 12             KAPP NILES         Cnc Gear Cutting      3000000.0      10000000.0      6500000.0   estimate                          https://www.machinetoolindex.com/machines/kapp-niles-kng-12
+                          Fooke Endura 904                  Fooke 5 Axis Machining Centers      3000000.0       8000000.0      5500000.0   estimate                           https://www.machinetoolindex.com/machines/fooke-endura-904
+                          Toshiba FMB-2000       Shibaura Machine      Cnc Boring Machines      3000000.0       8000000.0      5500000.0   estimate                https://www.machinetoolindex.com/machines/toshiba-fmb-series-fmb-2000
+GF Machining Liechti Turbomill 2000gx Twin GF Machining Solutions 5 Axis Machining Centers      4000000.0       6500000.0      5250000.0   estimate https://www.machinetoolindex.com/machines/gf-machining-liechti-turbomill-2000gx-twin
+         Starrag Droop+Rein TFS NEO Series                Starrag 5 Axis Machining Centers      2500000.0       8000000.0      5250000.0   estimate      https://www.machinetoolindex.com/machines/starrag-droop-plusrein-tfs-neo-series
+                     DMG Mori DMC 340 u FD               DMG Mori 5 Axis Machining Centers      4000000.0       6000000.0      5000000.0   estimate                      https://www.machinetoolindex.com/machines/dmg-mori-dmc-340-u-fd
+ GF Machining Liechti Turbomill 1400g Twin GF Machining Solutions 5 Axis Machining Centers      3500000.0       5500000.0      4500000.0   estimate  https://www.machinetoolindex.com/machines/gf-machining-liechti-turbomill-1400g-twin
+     GF Machining Liechti Turbomill 2600gx GF Machining Solutions 5 Axis Machining Centers      3500000.0       5500000.0      4500000.0   estimate      https://www.machinetoolindex.com/machines/gf-machining-liechti-turbomill-2600gx
+                           Jobs Jomach 150                   Jobs 5 Axis Machining Centers      3000000.0       6000000.0      4500000.0   estimate                            https://www.machinetoolindex.com/machines/jobs-jomach-150
+
+[16] 16 - Cheapest recorded price in each category
+------------------------------------------------------------------------------
+                Category             Machine Name        Manufacturer  price_mid_usd price_type
+5 Axis Machining Centers       Haas UMC-350HD-EDU     Haas Automation       104995.0     listed
+     Cnc Boring Machines            Sunnen SV-310              Sunnen       200000.0   estimate
+        Cnc Gear Cutting            Pfauter P 400             Pfauter       140000.0   estimate
+   Cnc Grinding Machines Chevalier Smart B818 III Chevalier Machinery        32500.0   estimate
+       Cnc Laser Cutting IPG Photonics YLP Series       IPG Photonics        44000.0   estimate
+              Cnc Lathes            Haas TL-1-EDU     Haas Automation        32995.0     listed
+
+[17] 17 - Average price by category and price type (fair comparison)
+------------------------------------------------------------------------------
+                Category price_type  machine_count  average_price_usd
+5 Axis Machining Centers   estimate            437         1132757.44
+5 Axis Machining Centers     listed             25          319475.00
+     Cnc Boring Machines   estimate             75         1295866.67
+        Cnc Gear Cutting   estimate             62          998225.81
+   Cnc Grinding Machines   estimate            157          502563.69
+       Cnc Laser Cutting   estimate            114          627096.49
+              Cnc Lathes   estimate            635          299457.48
+              Cnc Lathes     listed             59          152571.27
+
+[18] 18 - Machines with very wide price ranges
+------------------------------------------------------------------------------
+price_type  machine_count  wide_range_count  wide_range_pct
+  estimate           1480                21            1.42
+    listed             84                 0            0.00
+
+[19] 19 - The machines with very wide price ranges (high > 3x low)
+------------------------------------------------------------------------------
+                                           Machine Name    Manufacturer                 Category  price_low_usd  price_high_usd  price_mid_usd  high_to_low_ratio
+                               IPG Photonics YLM Series   IPG Photonics        Cnc Laser Cutting        40000.0        500000.0       270000.0               12.5
+                               IPG Photonics YLP Series   IPG Photonics        Cnc Laser Cutting         8000.0         80000.0        44000.0               10.0
+IPG Photonics YLP-HP High-Power Laser Processing System   IPG Photonics        Cnc Laser Cutting       500000.0       5000000.0      2750000.0               10.0
+                               IPG Photonics YLR Series   IPG Photonics        Cnc Laser Cutting        50000.0        500000.0       275000.0               10.0
+                              Starrag Dorries VC Series         Starrag               Cnc Lathes      3000000.0      20000000.0     11500000.0                6.7
+                            Starrag Dorries VC-V Series         Starrag               Cnc Lathes      3000000.0      20000000.0     11500000.0                6.7
+                                       Mazak Quick Turn  Yamazaki Mazak               Cnc Lathes        75000.0        350000.0       212500.0                4.7
+                                         Bodor P Series           Bodor        Cnc Laser Cutting       120000.0        500000.0       310000.0                4.2
+                                    Bodor P-Series 3015           Bodor        Cnc Laser Cutting       120000.0        500000.0       310000.0                4.2
+                            Starrag Berthiez RVU Series         Starrag    Cnc Grinding Machines      1000000.0       4000000.0      2500000.0                4.0
+                                        Bodor BCL-1530W           Bodor        Cnc Laser Cutting        60000.0        220000.0       140000.0                3.7
+                       Soraluce SP 6000 CNC Boring Mill        Soraluce      Cnc Boring Machines      1000000.0       3500000.0      2250000.0                3.5
+                         Starrag Droop+Rein FOGS Series         Starrag 5 Axis Machining Centers      3000000.0      10000000.0      6500000.0                3.3
+                                        PAMA Speedram 3            PAMA      Cnc Boring Machines      1500000.0       5000000.0      3250000.0                3.3
+                              Waldrich Coburg MasterTec Waldrich Coburg      Cnc Boring Machines      3000000.0      10000000.0      6500000.0                3.3
+                                      KAPP NILES KNG 12      KAPP NILES         Cnc Gear Cutting      3000000.0      10000000.0      6500000.0                3.3
+                      Starrag Droop+Rein TFS NEO Series         Starrag 5 Axis Machining Centers      2500000.0       8000000.0      5250000.0                3.2
+                     Juaristi MD Series CNC Boring Mill        Juaristi      Cnc Boring Machines       800000.0       2500000.0      1650000.0                3.1
+                                        PAMA Speedram 2            PAMA      Cnc Boring Machines       800000.0       2500000.0      1650000.0                3.1
+                                         Bodor T Series           Bodor        Cnc Laser Cutting        80000.0        250000.0       165000.0                3.1
+                              Starrag Dorries VT Series         Starrag               Cnc Lathes       800000.0       2500000.0      1650000.0                3.1
+
+[20] 20 - Suspicious classification: very expensive machines labeled as lathes
+------------------------------------------------------------------------------
+                Machine Name Manufacturer  price_mid_usd  x_travel_mm  z_travel_mm                                                                    URL
+   Starrag Dorries VC Series      Starrag     11500000.0          NaN          NaN    https://www.machinetoolindex.com/machines/starrag-dorries-vc-series
+ Starrag Dorries VC-V Series      Starrag     11500000.0          NaN          NaN  https://www.machinetoolindex.com/machines/starrag-dorries-vc-v-series
+ Starrag Berthiez TVU Series      Starrag      2750000.0          NaN          NaN  https://www.machinetoolindex.com/machines/starrag-berthiez-tvu-series
+  Starrag Berthiez VT Series      Starrag      2350000.0          NaN          NaN   https://www.machinetoolindex.com/machines/starrag-berthiez-vt-series
+              Okuma VTR-350A        Okuma      1750000.0          NaN          NaN               https://www.machinetoolindex.com/machines/okuma-vtr-350a
+   Starrag Dorries VT Series      Starrag      1650000.0          NaN          NaN    https://www.machinetoolindex.com/machines/starrag-dorries-vt-series
+            Okuma VTM-2000YB        Okuma      1600000.0       1600.0       1400.0             https://www.machinetoolindex.com/machines/okuma-vtm-2000yb
+DN Solutions PUMA VTR 2025 M DN Solutions      1075000.0       2640.0       1400.0 https://www.machinetoolindex.com/machines/dn-solutions-puma-vtr-2025-m
+            Okuma VTM-1200YB        Okuma      1000000.0       1270.0          NaN             https://www.machinetoolindex.com/machines/okuma-vtm-1200yb
+
+[21] 21 - Educational (EDU) models and their prices
+------------------------------------------------------------------------------
+                Category       Machine Name    Manufacturer  price_mid_usd price_type
+5 Axis Machining Centers Haas UMC-350HD-EDU Haas Automation       104995.0     listed
+              Cnc Lathes      Haas TL-1-EDU Haas Automation        32995.0     listed
+
+[22] 22 - Average price by manufacturer (at least 10 priced machines)
+------------------------------------------------------------------------------
+          Manufacturer  priced_machine_count  average_price_usd  min_price_usd  max_price_usd
+               Starrag                    35         2855000.00       325000.0     11500000.0
+GF Machining Solutions                    57         1291754.39       270000.0      5250000.0
+          Klingelnberg                    12         1275000.00       750000.0      2500000.0
+                Makino                    40         1230875.00       275000.0      6500000.0
+              DMG Mori                   122          931577.87       140000.0      8500000.0
+               Gleason                    13          926923.08       275000.0      1500000.0
+                TRUMPF                    11          844090.91       185000.0      2000000.0
+              Matsuura                    24          675520.83       250000.0      1600000.0
+          Junker Group                    11          660454.55       240000.0      1200000.0
+                Hermle                    19          650000.00       335000.0      2000000.0
+                Trumpf                    16          567187.50       300000.0       800000.0
+                Chiron                    27          539907.41       300000.0      1025000.0
+                  EMAG                    50          538200.00       115000.0      1200000.0
+    Kitamura Machinery                    11          510000.00       230000.0       775000.0
+                 Amada                    28          508928.57        80000.0      1250000.0
+          DN Solutions                   213          493769.95        57500.0      4250000.0
+                 Okuma                    71          428204.23        70000.0      3000000.0
+        Yamazaki Mazak                   152          373026.32        60000.0      2850000.0
+         Nakamura-Tome                    21          318809.52       150000.0       775000.0
+                  ANCA                    11          315227.27       217500.0       425000.0
+
+[23] 23 - Custom machine finder
+------------------------------------------------------------------------------
+            Machine Name       Manufacturer                 Category  price_mid_usd  price_low_usd  price_high_usd price_type  x_travel_mm  y_travel_mm  z_travel_mm  spindle_power_kw  max_spindle_rpm  tool_capacity                                                                       URL
+            Hurco VM10Ui              Hurco 5 Axis Machining Centers       140000.0       120000.0        160000.0   estimate        534.0        407.0        483.0          7.500000          10000.0           24.0                    https://www.machinetoolindex.com/machines/hurco-vm10ui
+          Hurco VM10UHSi              Hurco 5 Axis Machining Centers       150000.0       130000.0        170000.0   estimate        534.0        407.0        483.0          8.500000          20000.0           20.0                  https://www.machinetoolindex.com/machines/hurco-vm10uhsi
+           Hurco VMX30Ui              Hurco 5 Axis Machining Centers       175000.0       150000.0        200000.0   estimate        762.0        508.0        521.0         13.400000          12000.0           40.0                   https://www.machinetoolindex.com/machines/hurco-vmx30ui
+          Haas UMC-500SS    Haas Automation 5 Axis Machining Centers       185995.0       185995.0        185995.0     listed        610.0        406.0        406.0         22.400000          12000.0           30.0                  https://www.machinetoolindex.com/machines/haas-umc-500ss
+         Mazak VC-Ez 16X     Yamazaki Mazak 5 Axis Machining Centers       200000.0       175000.0        225000.0   estimate        711.0        406.0        406.0               NaN          12000.0           30.0                 https://www.machinetoolindex.com/machines/mazak-vc-ez-16x
+          Hurco VMX30UDi              Hurco 5 Axis Machining Centers       202500.0       175000.0        230000.0   estimate        762.0        508.0        521.0         15.000000          15000.0           40.0                  https://www.machinetoolindex.com/machines/hurco-vmx30udi
+           Hurco VMX42Ui              Hurco 5 Axis Machining Centers       210000.0       180000.0        240000.0   estimate       1067.0        610.0        521.0         18.000000          12000.0           40.0                   https://www.machinetoolindex.com/machines/hurco-vmx42ui
+       DMG Mori CMX 50 U           DMG Mori 5 Axis Machining Centers       225000.0       175000.0        275000.0   estimate        500.0        450.0        400.0         22.000000          18000.0           30.0               https://www.machinetoolindex.com/machines/dmg-mori-cmx-50-u
+         Hurco VMX30UHSi              Hurco 5 Axis Machining Centers       230000.0       200000.0        260000.0   estimate        762.0        508.0        521.0         35.000000          20000.0           40.0                 https://www.machinetoolindex.com/machines/hurco-vmx30uhsi
+  Kitamura Mycenter-3XVT Kitamura Machinery 5 Axis Machining Centers       230000.0       180000.0        280000.0   estimate        780.0        510.0        439.0         30.573695          15000.0           40.0 https://www.machinetoolindex.com/machines/kitamura-kitamura-mycenter-3xvt
+        Mazak VC-500A/5X     Yamazaki Mazak 5 Axis Machining Centers       230000.0       195000.0        265000.0   estimate        560.0        410.0        460.0         18.500000          12000.0            NaN                https://www.machinetoolindex.com/machines/mazak-vc-500a-5x
+            Hurco VC500i              Hurco 5 Axis Machining Centers       235000.0       200000.0        270000.0   estimate        520.0        500.0        425.0         11.000000          15000.0           40.0                    https://www.machinetoolindex.com/machines/hurco-vc500i
+          Hurco VMX42SWi              Hurco 5 Axis Machining Centers       235000.0       200000.0        270000.0   estimate       1067.0        610.0        610.0         36.500000          12000.0           40.0                  https://www.machinetoolindex.com/machines/hurco-vmx42swi
+         Mazak VC-Ez 20X     Yamazaki Mazak 5 Axis Machining Centers       237500.0       200000.0        275000.0   estimate        813.0        508.0        508.0               NaN          12000.0           30.0                 https://www.machinetoolindex.com/machines/mazak-vc-ez-20x
+          Haas UMC-750SS    Haas Automation 5 Axis Machining Centers       239995.0       239995.0        239995.0     listed        762.0        508.0        508.0         22.400000          12000.0           30.0                  https://www.machinetoolindex.com/machines/haas-umc-750ss
+          Hurco VMX42UDi              Hurco 5 Axis Machining Centers       240000.0       210000.0        270000.0   estimate       1067.0        610.0        520.0         18.000000          15000.0           40.0                  https://www.machinetoolindex.com/machines/hurco-vmx42udi
+   Okuma GENOS M460V-5AX              Okuma 5 Axis Machining Centers       240000.0       200000.0        280000.0   estimate        762.0        460.0        460.0               NaN          15000.0           48.0           https://www.machinetoolindex.com/machines/okuma-genos-m460v-5ax
+           Hurco VCX600i              Hurco 5 Axis Machining Centers       250000.0       220000.0        280000.0   estimate        600.0        560.0        500.0         16.000000          15000.0           40.0                   https://www.machinetoolindex.com/machines/hurco-vcx600i
+Brother Speedio HU550Xd1 Brother Industries 5 Axis Machining Centers       260000.0       220000.0        300000.0   estimate        550.0        500.0        400.0               NaN          20000.0           30.0        https://www.machinetoolindex.com/machines/brother-speedio-hu550xd1
+DN Solutions DNM 5AX 500       DN Solutions 5 Axis Machining Centers       260000.0       200000.0        320000.0   estimate        550.0        510.0        500.0         18.500000          15000.0            NaN        https://www.machinetoolindex.com/machines/dn-solutions-dnm-5ax-500
+       Mazak VCU-400A 5X     Yamazaki Mazak 5 Axis Machining Centers       262500.0       200000.0        325000.0   estimate        550.0        400.0        400.0               NaN          25000.0           30.0               https://www.machinetoolindex.com/machines/mazak-vcu-400a-5x
+         Hurco VMX42UHSi              Hurco 5 Axis Machining Centers       265000.0       230000.0        300000.0   estimate       1067.0        610.0        520.0         35.000000          18000.0           40.0                 https://www.machinetoolindex.com/machines/hurco-vmx42uhsi
+       DMG Mori CMX 70 U           DMG Mori 5 Axis Machining Centers       275000.0       225000.0        325000.0   estimate        750.0        600.0        520.0         22.000000          15000.0           40.0               https://www.machinetoolindex.com/machines/dmg-mori-cmx-70-u
+       Makino SLIM5n 4+1             Makino 5 Axis Machining Centers       275000.0       200000.0        350000.0   estimate        710.0        400.0        410.0               NaN          16000.0           26.0               https://www.machinetoolindex.com/machines/makino-slim5n-4-1
+            Hurco VC600i              Hurco 5 Axis Machining Centers       285000.0       250000.0        320000.0   estimate        820.0        550.0        500.0         17.000000          12000.0           40.0                    https://www.machinetoolindex.com/machines/hurco-vc600i
+         Haas UMC-1000SS    Haas Automation 5 Axis Machining Centers       286995.0       286995.0        286995.0     listed       1016.0        635.0        635.0         22.400000          12000.0           30.0                 https://www.machinetoolindex.com/machines/haas-umc-1000ss
+         Hurco VMX42SRTi              Hurco 5 Axis Machining Centers       290000.0       250000.0        330000.0   estimate       1067.0        610.0        610.0         36.500000          12000.0           40.0                 https://www.machinetoolindex.com/machines/hurco-vmx42srti
+           Hurco VMX60Ui              Hurco 5 Axis Machining Centers       290000.0       250000.0        330000.0   estimate       1524.0        660.0        520.0         18.000000          12000.0           40.0                   https://www.machinetoolindex.com/machines/hurco-vmx60ui
+   Okuma GENOS M560V-5AX              Okuma 5 Axis Machining Centers       290000.0       250000.0        330000.0   estimate       1050.0        560.0        460.0               NaN          15000.0           60.0           https://www.machinetoolindex.com/machines/okuma-genos-m560v-5ax
+           Haas GM-1-5AX    Haas Automation 5 Axis Machining Centers       299995.0       299995.0        299995.0     listed       3073.0       1549.0        610.0         11.200000          24000.0           30.0                   https://www.machinetoolindex.com/machines/haas-gm-1-5ax
+
+[24] 24 - How many machines match the filters in total
+------------------------------------------------------------------------------
+ matching_machines
+                96
+
+[25] 25 - The next 30 matching machines (30 to 60)
+------------------------------------------------------------------------------
+                    Machine Name       Manufacturer  price_mid_usd  price_low_usd  price_high_usd price_type  x_travel_mm  y_travel_mm  z_travel_mm  spindle_power_kw  max_spindle_rpm  tool_capacity                                                                        URL
+               DMG Mori CMX 90 U           DMG Mori       300000.0       240000.0        360000.0   estimate        900.0        700.0        580.0         22.000000          15000.0           30.0                 https://www.machinetoolindex.com/machines/dmg-mori-cmx-90u
+           Hyundai WIA KF7300/5A        Hyundai WIA       300000.0       250000.0        350000.0   estimate        765.0        650.0        520.0               NaN          20000.0           40.0             https://www.machinetoolindex.com/machines/hyundai-wia-kf73005a
+                 Matsuura MX-520           Matsuura       300000.0       250000.0        350000.0   estimate        630.0        560.0        510.0               NaN          20000.0            NaN                  https://www.machinetoolindex.com/machines/matsuura-mx-520
+                  Hurco VMX60SWi              Hurco       310000.0       270000.0        350000.0   estimate       1524.0        661.0        610.0         36.500000          12000.0           40.0                   https://www.machinetoolindex.com/machines/hurco-vmx60swi
+               Haas UMC-1000SS-P    Haas Automation       311995.0       311995.0        311995.0     listed       1016.0        635.0        635.0         22.400000          12000.0           30.0                https://www.machinetoolindex.com/machines/haas-umc-1000ss-p
+             Haas UMC-1500SS-DUO    Haas Automation       311995.0       311995.0        311995.0     listed       1524.0        508.0        508.0         22.400000          12000.0           30.0              https://www.machinetoolindex.com/machines/haas-umc-1500ss-duo
+                   Hurco BX 400i              Hurco       315000.0       250000.0        380000.0   estimate       1020.0        700.0        500.0         35.000000          20000.0           30.0                https://www.machinetoolindex.com/machines/hurco-bx-400i-5ax
+                 Hwacheon M2-5AX           Hwacheon       315000.0       250000.0        380000.0   estimate        750.0        650.0        500.0               NaN          30000.0           30.0                  https://www.machinetoolindex.com/machines/hwacheon-m2-5ax
+           Hyundai WIA KF3500/5A        Hyundai WIA       315000.0       250000.0        380000.0   estimate        600.0        655.0        500.0               NaN          20000.0           30.0             https://www.machinetoolindex.com/machines/hyundai-wia-kf35005a
+            Mazak Variaxis C-500     Yamazaki Mazak       315000.0       250000.0        380000.0   estimate        550.0        510.0        475.0         18.500000          15000.0           30.0             https://www.machinetoolindex.com/machines/mazak-variaxis-c-500
+           DN Solutions DVF 5000       DN Solutions       317500.0       250000.0        385000.0   estimate        625.0        450.0        400.0               NaN          18000.0           30.0            https://www.machinetoolindex.com/machines/dn-solutions-dvf-5000
+                    Hurco BX40Ui              Hurco       320000.0       280000.0        360000.0   estimate        950.0        550.0        500.0         35.000000          20000.0           30.0                     https://www.machinetoolindex.com/machines/hurco-bx40ui
+                      DMU 60 evo           DMG Mori       325000.0       250000.0        400000.0   estimate        750.0        550.0        550.0               NaN          30000.0          300.0                       https://www.machinetoolindex.com/machines/dmu-60-evo
+                    Hermle C 250             Hermle       335000.0       270000.0        400000.0   estimate        600.0        550.0        450.0               NaN          20000.0           30.0                      https://www.machinetoolindex.com/machines/hermle-c250
+               DMG Mori DMX 60 U           DMG Mori       337500.0       275000.0        400000.0   estimate        600.0        600.0        510.0               NaN          20000.0            NaN                https://www.machinetoolindex.com/machines/dmg-mori-dmx-60-u
+                 Haas GM-1XT-5AX    Haas Automation       339995.0       339995.0        339995.0     listed       3613.0       1549.0        610.0         11.200000          24000.0           30.0                  https://www.machinetoolindex.com/machines/haas-gm-1xt-5ax
+          Kitamura Mytrunnion-4G Kitamura Machinery       340000.0       280000.0        400000.0   estimate        610.0        610.0        550.0         11.185498          20000.0          100.0  https://www.machinetoolindex.com/machines/kitamura-kitamura-mytrunnion-4g
+           DN Solutions DVF 4000       DN Solutions       350000.0       280000.0        420000.0   estimate        620.0        440.0        430.0               NaN          15000.0           30.0            https://www.machinetoolindex.com/machines/dn-solutions-dvf-4000
+                  Hermle B 300 U             Hermle       350000.0       280000.0        420000.0   estimate        650.0        560.0        470.0         17.000000          20000.0           36.0               https://www.machinetoolindex.com/machines/hermle-b-300-u-5ax
+               Hermle C 250 GEN2             Hermle       350000.0       280000.0        420000.0   estimate        600.0        550.0        450.0               NaN          20000.0            NaN         https://www.machinetoolindex.com/machines/hermle-hermle-c-250-gen2
+                Hurco VMX42HSRTi              Hurco       350000.0       300000.0        400000.0   estimate       1067.0        610.0        610.0         37.000000          24000.0           40.0                 https://www.machinetoolindex.com/machines/hurco-vmx42hsrti
+                 Spinner U5-1530            Spinner       350000.0       280000.0        420000.0   estimate       1530.0        530.0        465.0               NaN          20000.0            NaN                  https://www.machinetoolindex.com/machines/spinner-u5-1530
+                 Haas UMC-1250SS    Haas Automation       359995.0       359995.0        359995.0     listed       1270.0        762.0        711.0         22.400000          12000.0           30.0                  https://www.machinetoolindex.com/machines/haas-umc-1250ss
+                Matsuura MX-520T           Matsuura       362500.0       300000.0        425000.0   estimate        630.0        560.0        510.0               NaN          20000.0            NaN                 https://www.machinetoolindex.com/machines/matsuura-mx-520t
+               DMG Mori DMX 80 u           DMG Mori       365000.0       280000.0        450000.0   estimate        800.0        600.0        510.0               NaN          20000.0            NaN                https://www.machinetoolindex.com/machines/dmg-mori-dmx-80-u
+                 Hurco VMX60SRTi              Hurco       370000.0       320000.0        420000.0   estimate       1524.0        661.0        610.0         36.500000          12000.0           40.0                  https://www.machinetoolindex.com/machines/hurco-vmx60srti
+                   Chiron FZ 15S             Chiron       375000.0       300000.0        450000.0   estimate        730.0        400.0        425.0               NaN          20000.0           20.0                    https://www.machinetoolindex.com/machines/chiron-fz-15s
+Chiron FZ 15S Five Axis Baseline             Chiron       375000.0       325000.0        425000.0   estimate        550.0        400.0        400.0               NaN          20000.0           60.0 https://www.machinetoolindex.com/machines/chiron-fz-15s-five-axis-baseline
+             DMG Mori DMU 80 eVo           DMG Mori       375000.0       300000.0        450000.0   estimate        800.0        650.0        550.0               NaN          24000.0            NaN              https://www.machinetoolindex.com/machines/dmg-mori-dmu-80-evo
+           DN Solutions DVF 6500       DN Solutions       375000.0       300000.0        450000.0   estimate        750.0        785.0        600.0               NaN          18000.0           40.0            https://www.machinetoolindex.com/machines/dn-solutions-dvf-6500
+
+[26] 26 - The last 36 matching machines (60 to 96)
+------------------------------------------------------------------------------
+                               Machine Name           Manufacturer  price_mid_usd  price_low_usd  price_high_usd price_type  x_travel_mm  y_travel_mm  z_travel_mm  spindle_power_kw  max_spindle_rpm  tool_capacity                                                                                   URL
+                              Haas GM-2-5AX        Haas Automation       399995.0       399995.0        399995.0     listed       3683.0       2223.0        998.0              12.0          20000.0           30.0                               https://www.machinetoolindex.com/machines/haas-gm-2-5ax
+                            DMG Mori DMU 40               DMG Mori       400000.0       325000.0        475000.0   estimate        550.0        450.0        420.0               NaN          20000.0            NaN                             https://www.machinetoolindex.com/machines/dmg-mori-dmu-40
+                  DMG Mori DMU 65 monoBlock               DMG Mori       400000.0       300000.0        500000.0   estimate        735.0        650.0        560.0               NaN          30000.0          240.0                   https://www.machinetoolindex.com/machines/dmg-mori-dmu-65-monoblock
+                      DN Solutions DVF 8000           DN Solutions       400000.0       300000.0        500000.0   estimate       1000.0        900.0        685.0               NaN          18000.0           40.0                       https://www.machinetoolindex.com/machines/dn-solutions-dvf-8000
+                    Mazak VC-500A/5X AM HWD         Yamazaki Mazak       400000.0       350000.0        450000.0   estimate        560.0        410.0        460.0              18.5          12000.0            NaN                     https://www.machinetoolindex.com/machines/mazak-vc-500a-5x-am-hwd
+                             Hurco VMX84SWi                  Hurco       405000.0       350000.0        460000.0   estimate       2134.0        864.0        762.0              36.5          12000.0           40.0                              https://www.machinetoolindex.com/machines/hurco-vmx84swi
+                         Haas UMC-1250SS-50        Haas Automation       411995.0       411995.0        411995.0     listed       1270.0        762.0        711.0              44.7          12000.0           30.0                          https://www.machinetoolindex.com/machines/haas-umc-1250ss-50
+                   Chiron FZ 12 S Five Axis                 Chiron       425000.0       350000.0        500000.0   estimate        550.0        400.0        400.0               NaN          30000.0            NaN                    https://www.machinetoolindex.com/machines/chiron-fz-12-s-five-axis
+                         GF Mikron HPM 400U GF Machining Solutions       425000.0       350000.0        500000.0   estimate        500.0        450.0        400.0              35.0          20000.0           30.0                                 https://www.machinetoolindex.com/machines/gf-hpm-400u
+                          Hyundai WIA F400D            Hyundai WIA       425000.0       350000.0        500000.0   estimate        600.0        500.0        500.0               NaN          15000.0            NaN                           https://www.machinetoolindex.com/machines/hyundai-wia-f400d
+                     Kitamura Mycenter 5XiD     Kitamura Machinery       425000.0       350000.0        500000.0   estimate        500.0        450.0        450.0               NaN          20000.0            NaN                      https://www.machinetoolindex.com/machines/kitamura-mycenter-5xid
+                                  Makino D2                 Makino       425000.0       350000.0        500000.0   estimate       2200.0       2300.0       1100.0               NaN          15000.0            NaN                                   https://www.machinetoolindex.com/machines/makino-d2
+                   Mazak VARIAXIS i-600 NEO         Yamazaki Mazak       425000.0       350000.0        500000.0   estimate        508.0        914.0        508.0              26.0          18000.0           30.0                    https://www.machinetoolindex.com/machines/mazak-variaxis-i-600-neo
+                       Mazak VARIAXIS i-700         Yamazaki Mazak       425000.0       350000.0        500000.0   estimate        630.0       1100.0        600.0              22.0          18000.0            NaN                        https://www.machinetoolindex.com/machines/mazak-variaxis-i-700
+                      Mazak VARIAXIS i-700T         Yamazaki Mazak       425000.0       350000.0        500000.0   estimate        635.0       1092.0        610.0              22.0          18000.0           30.0                       https://www.machinetoolindex.com/machines/mazak-variaxis-i-700t
+                     DMG Mori DMU 80 FD eVo               DMG Mori       435000.0       350000.0        520000.0   estimate        800.0        650.0        550.0               NaN          24000.0            NaN                      https://www.machinetoolindex.com/machines/dmg-mori-dmu-80-fd-evo
+         Chiron MILL 800 Five Axis Baseline                 Chiron       437500.0       375000.0        500000.0   estimate        800.0        630.0        550.0               NaN          20000.0           60.0          https://www.machinetoolindex.com/machines/chiron-mill-800-five-axis-baseline
+                               Hermle C 400                 Hermle       437500.0       350000.0        525000.0   estimate        850.0        700.0        500.0              20.0          20000.0           38.0                                 https://www.machinetoolindex.com/machines/hermle-c400
+   DMG Mori DMC 75 monoBLOCK 2nd Generation               DMG Mori       440000.0       340000.0        540000.0   estimate        750.0        650.0        560.0              35.0          20000.0          240.0    https://www.machinetoolindex.com/machines/dmg-mori-dmc-75-monoblock-2nd-generation
+             DMG Mori DMU 50 3rd Generation               DMG Mori       450000.0       350000.0        550000.0   estimate        650.0        520.0        475.0               NaN          20000.0          180.0              https://www.machinetoolindex.com/machines/dmg-mori-dmu-50-3rd-generation
+                    DN Solutions DVF 6500 T           DN Solutions       450000.0       375000.0        525000.0   estimate        750.0        785.0        600.0               NaN          18000.0           60.0                     https://www.machinetoolindex.com/machines/dn-solutions-dvf-6500-t
+                     GF Mikron MILL P 500 U GF Machining Solutions       450000.0       380000.0        520000.0   estimate        500.0        450.0        400.0              36.0          20000.0           30.0                       https://www.machinetoolindex.com/machines/gf-mikron-mill-p-500u
+                                  Grob G350                   Grob       450000.0       350000.0        550000.0   estimate        600.0        855.0        750.0              52.0          12000.0            NaN                                   https://www.machinetoolindex.com/machines/grob-g350
+                     Kitamura Mytrunnion-5G     Kitamura Machinery       450000.0       350000.0        550000.0   estimate        815.0        745.0        500.0               NaN          20000.0          100.0             https://www.machinetoolindex.com/machines/kitamura-kitamura-mytrunnion-5g
+                                Makino D500                 Makino       450000.0       350000.0        550000.0   estimate        550.0       1000.0        500.0               NaN          14000.0            NaN                                 https://www.machinetoolindex.com/machines/makino-d500
+                          Hermle C 400 GEN2                 Hermle       455000.0       370000.0        540000.0   estimate        850.0        700.0        500.0               NaN          20000.0            NaN                    https://www.machinetoolindex.com/machines/hermle-hermle-c-400-gen2
+                        Matsuura MX-520 PC7               Matsuura       462500.0       400000.0        525000.0   estimate        630.0        560.0        510.0               NaN          12000.0            NaN                         https://www.machinetoolindex.com/machines/matsuura-mx-520-pc7
+                   Mazak VARIAXIS i-700 NEO         Yamazaki Mazak       475000.0       400000.0        550000.0   estimate        635.0       1092.0        610.0              26.0          18000.0           30.0                    https://www.machinetoolindex.com/machines/mazak-variaxis-i-700-neo
+                              Chiron FZ 16S                 Chiron       487500.0       400000.0        575000.0   estimate        660.0        680.0        500.0               NaN          20000.0            NaN                               https://www.machinetoolindex.com/machines/chiron-fz-16s
+                    Chiron FZ 16S Five Axis                 Chiron       487500.0       400000.0        575000.0   estimate        660.0        680.0        500.0               NaN          20000.0            NaN                     https://www.machinetoolindex.com/machines/chiron-fz-16s-five-axis
+DMG Mori DMU 65 FD monoBLOCK 2nd Generation               DMG Mori       490000.0       380000.0        600000.0   estimate        735.0        650.0        560.0               NaN          30000.0          240.0 https://www.machinetoolindex.com/machines/dmg-mori-dmu-65-fd-monoblock-2nd-generation
+                  DMG Mori DMU 95 monoBLOCK               DMG Mori       490000.0       400000.0        580000.0   estimate        950.0        850.0        650.0               NaN          20000.0          240.0                   https://www.machinetoolindex.com/machines/dmg-mori-dmu-95-monoblock
+      DMG Mori DMU 60 FD eVo 2nd Generation               DMG Mori       500000.0       400000.0        600000.0   estimate        750.0        550.0        550.0               NaN          30000.0          300.0       https://www.machinetoolindex.com/machines/dmg-mori-dmu-60-fd-evo-2nd-generation
+   DMG Mori GEAR production by NMV 5000 DCG               DMG Mori       500000.0       400000.0        600000.0   estimate        730.0        760.0        850.0              22.0          20000.0            NaN    https://www.machinetoolindex.com/machines/dmg-mori-gear-production-by-nmv-5000-dcg
+                               Makino DA500                 Makino       500000.0       400000.0        600000.0   estimate        800.0        900.0        550.0               NaN          20000.0            NaN                                https://www.machinetoolindex.com/machines/makino-da500
+                            Matsuura MX-850               Matsuura       500000.0       400000.0        600000.0   estimate        900.0        780.0        650.0               NaN          20000.0            NaN                             https://www.machinetoolindex.com/machines/matsuura-mx-850
+
+[27] 27 - Shortlist: 5-axis machines whose HIGH price is within USD 500,000
+------------------------------------------------------------------------------
+                      Machine Name           Manufacturer  price_low_usd  price_mid_usd  price_high_usd price_type  x_travel_mm  y_travel_mm  z_travel_mm  spindle_power_kw  max_spindle_rpm  tool_capacity                                                                          URL
+                   Hwacheon M2-5AX               Hwacheon       250000.0       315000.0        380000.0   estimate        750.0        650.0        500.0               NaN          30000.0           30.0                    https://www.machinetoolindex.com/machines/hwacheon-m2-5ax
+                        DMU 60 evo               DMG Mori       250000.0       325000.0        400000.0   estimate        750.0        550.0        550.0               NaN          30000.0          300.0                         https://www.machinetoolindex.com/machines/dmu-60-evo
+         DMG Mori DMU 65 monoBlock               DMG Mori       300000.0       400000.0        500000.0   estimate        735.0        650.0        560.0               NaN          30000.0          240.0          https://www.machinetoolindex.com/machines/dmg-mori-dmu-65-monoblock
+          Chiron FZ 12 S Five Axis                 Chiron       350000.0       425000.0        500000.0   estimate        550.0        400.0        400.0               NaN          30000.0            NaN           https://www.machinetoolindex.com/machines/chiron-fz-12-s-five-axis
+                 Mazak VCU-400A 5X         Yamazaki Mazak       200000.0       262500.0        325000.0   estimate        550.0        400.0        400.0               NaN          25000.0           30.0                  https://www.machinetoolindex.com/machines/mazak-vcu-400a-5x
+                  Hurco VMX42HSRTi                  Hurco       300000.0       350000.0        400000.0   estimate       1067.0        610.0        610.0         37.000000          24000.0           40.0                   https://www.machinetoolindex.com/machines/hurco-vmx42hsrti
+               DMG Mori DMU 80 eVo               DMG Mori       300000.0       375000.0        450000.0   estimate        800.0        650.0        550.0               NaN          24000.0            NaN                https://www.machinetoolindex.com/machines/dmg-mori-dmu-80-evo
+                    Hurco VM10UHSi                  Hurco       130000.0       150000.0        170000.0   estimate        534.0        407.0        483.0          8.500000          20000.0           20.0                     https://www.machinetoolindex.com/machines/hurco-vm10uhsi
+                   Hurco VMX30UHSi                  Hurco       200000.0       230000.0        260000.0   estimate        762.0        508.0        521.0         35.000000          20000.0           40.0                    https://www.machinetoolindex.com/machines/hurco-vmx30uhsi
+          Brother Speedio HU550Xd1     Brother Industries       220000.0       260000.0        300000.0   estimate        550.0        500.0        400.0               NaN          20000.0           30.0           https://www.machinetoolindex.com/machines/brother-speedio-hu550xd1
+             Hyundai WIA KF7300/5A            Hyundai WIA       250000.0       300000.0        350000.0   estimate        765.0        650.0        520.0               NaN          20000.0           40.0               https://www.machinetoolindex.com/machines/hyundai-wia-kf73005a
+                   Matsuura MX-520               Matsuura       250000.0       300000.0        350000.0   estimate        630.0        560.0        510.0               NaN          20000.0            NaN                    https://www.machinetoolindex.com/machines/matsuura-mx-520
+                     Hurco BX 400i                  Hurco       250000.0       315000.0        380000.0   estimate       1020.0        700.0        500.0         35.000000          20000.0           30.0                  https://www.machinetoolindex.com/machines/hurco-bx-400i-5ax
+             Hyundai WIA KF3500/5A            Hyundai WIA       250000.0       315000.0        380000.0   estimate        600.0        655.0        500.0               NaN          20000.0           30.0               https://www.machinetoolindex.com/machines/hyundai-wia-kf35005a
+                      Hurco BX40Ui                  Hurco       280000.0       320000.0        360000.0   estimate        950.0        550.0        500.0         35.000000          20000.0           30.0                       https://www.machinetoolindex.com/machines/hurco-bx40ui
+                      Hermle C 250                 Hermle       270000.0       335000.0        400000.0   estimate        600.0        550.0        450.0               NaN          20000.0           30.0                        https://www.machinetoolindex.com/machines/hermle-c250
+                 DMG Mori DMX 60 U               DMG Mori       275000.0       337500.0        400000.0   estimate        600.0        600.0        510.0               NaN          20000.0            NaN                  https://www.machinetoolindex.com/machines/dmg-mori-dmx-60-u
+            Kitamura Mytrunnion-4G     Kitamura Machinery       280000.0       340000.0        400000.0   estimate        610.0        610.0        550.0         11.185498          20000.0          100.0    https://www.machinetoolindex.com/machines/kitamura-kitamura-mytrunnion-4g
+                    Hermle B 300 U                 Hermle       280000.0       350000.0        420000.0   estimate        650.0        560.0        470.0         17.000000          20000.0           36.0                 https://www.machinetoolindex.com/machines/hermle-b-300-u-5ax
+                 Hermle C 250 GEN2                 Hermle       280000.0       350000.0        420000.0   estimate        600.0        550.0        450.0               NaN          20000.0            NaN           https://www.machinetoolindex.com/machines/hermle-hermle-c-250-gen2
+                   Spinner U5-1530                Spinner       280000.0       350000.0        420000.0   estimate       1530.0        530.0        465.0               NaN          20000.0            NaN                    https://www.machinetoolindex.com/machines/spinner-u5-1530
+                  Matsuura MX-520T               Matsuura       300000.0       362500.0        425000.0   estimate        630.0        560.0        510.0               NaN          20000.0            NaN                   https://www.machinetoolindex.com/machines/matsuura-mx-520t
+                 DMG Mori DMX 80 u               DMG Mori       280000.0       365000.0        450000.0   estimate        800.0        600.0        510.0               NaN          20000.0            NaN                  https://www.machinetoolindex.com/machines/dmg-mori-dmx-80-u
+                     Chiron FZ 15S                 Chiron       300000.0       375000.0        450000.0   estimate        730.0        400.0        425.0               NaN          20000.0           20.0                      https://www.machinetoolindex.com/machines/chiron-fz-15s
+  Chiron FZ 15S Five Axis Baseline                 Chiron       325000.0       375000.0        425000.0   estimate        550.0        400.0        400.0               NaN          20000.0           60.0   https://www.machinetoolindex.com/machines/chiron-fz-15s-five-axis-baseline
+                   DMG Mori DMU 40               DMG Mori       325000.0       400000.0        475000.0   estimate        550.0        450.0        420.0               NaN          20000.0            NaN                    https://www.machinetoolindex.com/machines/dmg-mori-dmu-40
+                GF Mikron HPM 400U GF Machining Solutions       350000.0       425000.0        500000.0   estimate        500.0        450.0        400.0         35.000000          20000.0           30.0                        https://www.machinetoolindex.com/machines/gf-hpm-400u
+            Kitamura Mycenter 5XiD     Kitamura Machinery       350000.0       425000.0        500000.0   estimate        500.0        450.0        450.0               NaN          20000.0            NaN             https://www.machinetoolindex.com/machines/kitamura-mycenter-5xid
+Chiron MILL 800 Five Axis Baseline                 Chiron       375000.0       437500.0        500000.0   estimate        800.0        630.0        550.0               NaN          20000.0           60.0 https://www.machinetoolindex.com/machines/chiron-mill-800-five-axis-baseline
+                 DMG Mori CMX 50 U               DMG Mori       175000.0       225000.0        275000.0   estimate        500.0        450.0        400.0         22.000000          18000.0           30.0                  https://www.machinetoolindex.com/machines/dmg-mori-cmx-50-u
+                   Hurco VMX42UHSi                  Hurco       230000.0       265000.0        300000.0   estimate       1067.0        610.0        520.0         35.000000          18000.0           40.0                    https://www.machinetoolindex.com/machines/hurco-vmx42uhsi
+             DN Solutions DVF 5000           DN Solutions       250000.0       317500.0        385000.0   estimate        625.0        450.0        400.0               NaN          18000.0           30.0              https://www.machinetoolindex.com/machines/dn-solutions-dvf-5000
+             DN Solutions DVF 6500           DN Solutions       300000.0       375000.0        450000.0   estimate        750.0        785.0        600.0               NaN          18000.0           40.0              https://www.machinetoolindex.com/machines/dn-solutions-dvf-6500
+             DN Solutions DVF 8000           DN Solutions       300000.0       400000.0        500000.0   estimate       1000.0        900.0        685.0               NaN          18000.0           40.0              https://www.machinetoolindex.com/machines/dn-solutions-dvf-8000
+          Mazak VARIAXIS i-600 NEO         Yamazaki Mazak       350000.0       425000.0        500000.0   estimate        508.0        914.0        508.0         26.000000          18000.0           30.0           https://www.machinetoolindex.com/machines/mazak-variaxis-i-600-neo
+              Mazak VARIAXIS i-700         Yamazaki Mazak       350000.0       425000.0        500000.0   estimate        630.0       1100.0        600.0         22.000000          18000.0            NaN               https://www.machinetoolindex.com/machines/mazak-variaxis-i-700
+             Mazak VARIAXIS i-700T         Yamazaki Mazak       350000.0       425000.0        500000.0   estimate        635.0       1092.0        610.0         22.000000          18000.0           30.0              https://www.machinetoolindex.com/machines/mazak-variaxis-i-700t
+                 Makino SLIM5n 4+1                 Makino       200000.0       275000.0        350000.0   estimate        710.0        400.0        410.0               NaN          16000.0           26.0                  https://www.machinetoolindex.com/machines/makino-slim5n-4-1
+                    Hurco VMX30UDi                  Hurco       175000.0       202500.0        230000.0   estimate        762.0        508.0        521.0         15.000000          15000.0           40.0                     https://www.machinetoolindex.com/machines/hurco-vmx30udi
+            Kitamura Mycenter-3XVT     Kitamura Machinery       180000.0       230000.0        280000.0   estimate        780.0        510.0        439.0         30.573695          15000.0           40.0    https://www.machinetoolindex.com/machines/kitamura-kitamura-mycenter-3xvt
+
+[28] 28 - Count: how many machines match Query 27 in total (no LIMIT)
+------------------------------------------------------------------------------
+ total_matches
+            51
+
+[29] 29 - Shortlist page 2: same filters as Query 27, rows 41 onward
+------------------------------------------------------------------------------
+            Machine Name   Manufacturer  price_low_usd  price_mid_usd  price_high_usd price_type  x_travel_mm  y_travel_mm  z_travel_mm  spindle_power_kw  max_spindle_rpm  tool_capacity                                                                URL
+            Hurco VC500i          Hurco       200000.0       235000.0        270000.0   estimate        520.0        500.0        425.0              11.0          15000.0           40.0             https://www.machinetoolindex.com/machines/hurco-vc500i
+          Hurco VMX42UDi          Hurco       210000.0       240000.0        270000.0   estimate       1067.0        610.0        520.0              18.0          15000.0           40.0           https://www.machinetoolindex.com/machines/hurco-vmx42udi
+   Okuma GENOS M460V-5AX          Okuma       200000.0       240000.0        280000.0   estimate        762.0        460.0        460.0               NaN          15000.0           48.0    https://www.machinetoolindex.com/machines/okuma-genos-m460v-5ax
+           Hurco VCX600i          Hurco       220000.0       250000.0        280000.0   estimate        600.0        560.0        500.0              16.0          15000.0           40.0            https://www.machinetoolindex.com/machines/hurco-vcx600i
+DN Solutions DNM 5AX 500   DN Solutions       200000.0       260000.0        320000.0   estimate        550.0        510.0        500.0              18.5          15000.0            NaN https://www.machinetoolindex.com/machines/dn-solutions-dnm-5ax-500
+       DMG Mori CMX 70 U       DMG Mori       225000.0       275000.0        325000.0   estimate        750.0        600.0        520.0              22.0          15000.0           40.0        https://www.machinetoolindex.com/machines/dmg-mori-cmx-70-u
+   Okuma GENOS M560V-5AX          Okuma       250000.0       290000.0        330000.0   estimate       1050.0        560.0        460.0               NaN          15000.0           60.0    https://www.machinetoolindex.com/machines/okuma-genos-m560v-5ax
+       DMG Mori CMX 90 U       DMG Mori       240000.0       300000.0        360000.0   estimate        900.0        700.0        580.0              22.0          15000.0           30.0         https://www.machinetoolindex.com/machines/dmg-mori-cmx-90u
+    Mazak Variaxis C-500 Yamazaki Mazak       250000.0       315000.0        380000.0   estimate        550.0        510.0        475.0              18.5          15000.0           30.0     https://www.machinetoolindex.com/machines/mazak-variaxis-c-500
+   DN Solutions DVF 4000   DN Solutions       280000.0       350000.0        420000.0   estimate        620.0        440.0        430.0               NaN          15000.0           30.0    https://www.machinetoolindex.com/machines/dn-solutions-dvf-4000
+       Hyundai WIA F400D    Hyundai WIA       350000.0       425000.0        500000.0   estimate        600.0        500.0        500.0               NaN          15000.0            NaN        https://www.machinetoolindex.com/machines/hyundai-wia-f400d
+
+[30] 30 - Listed (published) prices only: machines with a guaranteed price within USD 500,000
+------------------------------------------------------------------------------
+       Machine Name    Manufacturer  price_mid_usd price_type  x_travel_mm  y_travel_mm  z_travel_mm  spindle_power_kw  max_spindle_rpm  tool_capacity                                                           URL
+       Haas UMC-500 Haas Automation       156995.0     listed        610.0        406.0        406.0              22.4           8100.0           30.0        https://www.machinetoolindex.com/machines/haas-umc-500
+     Haas UMC-500SS Haas Automation       185995.0     listed        610.0        406.0        406.0              22.4          12000.0           30.0      https://www.machinetoolindex.com/machines/haas-umc-500ss
+       Haas UMC-750 Haas Automation       192995.0     listed        762.0        508.0        508.0              22.4           8100.0           30.0        https://www.machinetoolindex.com/machines/haas-umc-750
+     Haas VF-5/40TR Haas Automation       225995.0     listed       1270.0        660.0        635.0              22.4           8100.0           30.0      https://www.machinetoolindex.com/machines/haas-vf-5-40tr
+     Haas UMC-750SS Haas Automation       239995.0     listed        762.0        508.0        508.0              22.4          12000.0           30.0      https://www.machinetoolindex.com/machines/haas-umc-750ss
+      Haas UMC-1000            Haas       251995.0     listed       1016.0        635.0        635.0              22.4           8100.0           30.0       https://www.machinetoolindex.com/machines/haas-umc-1000
+    Haas UMC-1000-P Haas Automation       269995.0     listed       1016.0        635.0        635.0              22.4           8100.0           30.0     https://www.machinetoolindex.com/machines/haas-umc-1000-p
+    Haas UMC-1000SS Haas Automation       286995.0     listed       1016.0        635.0        635.0              22.4          12000.0           30.0     https://www.machinetoolindex.com/machines/haas-umc-1000ss
+  Haas UMC-1500-Duo Haas Automation       286995.0     listed       1524.0        508.0        508.0              22.4           8100.0           30.0   https://www.machinetoolindex.com/machines/haas-umc-1500-duo
+  Haas UMC-1000SS-P Haas Automation       311995.0     listed       1016.0        635.0        635.0              22.4          12000.0           30.0   https://www.machinetoolindex.com/machines/haas-umc-1000ss-p
+      Haas UMC-1250 Haas Automation       311995.0     listed       1270.0        762.0        711.0              22.4           8100.0           30.0       https://www.machinetoolindex.com/machines/haas-umc-1250
+Haas UMC-1500SS-DUO Haas Automation       311995.0     listed       1524.0        508.0        508.0              22.4          12000.0           30.0 https://www.machinetoolindex.com/machines/haas-umc-1500ss-duo
+   Haas UMC-1250/50 Haas Automation       356995.0     listed       1270.0        762.0        711.0              44.7           7500.0           30.0    https://www.machinetoolindex.com/machines/haas-umc-1250-50
+    Haas UMC-1250SS Haas Automation       359995.0     listed       1270.0        762.0        711.0              22.4          12000.0           30.0     https://www.machinetoolindex.com/machines/haas-umc-1250ss
+ Haas UMC-1250SS-50 Haas Automation       411995.0     listed       1270.0        762.0        711.0              44.7          12000.0           30.0  https://www.machinetoolindex.com/machines/haas-umc-1250ss-50
+
+[31] 31 - Market overview: what each RPM tier gives you (price high <= 500k, same filters as Query 27 but RPM >= 8000)
+------------------------------------------------------------------------------
+            rpm_tier  machines  cheapest_mid  avg_mid  max_high  biggest_x  biggest_y  biggest_z  listed_price_count
+      1) 24,000+ RPM         7      262500.0 350357.0  500000.0     1067.0      650.0      610.0                   0
+2) 18,000-23,999 RPM        30      150000.0 342500.0  500000.0     1530.0     1100.0      685.0                   0
+3) 15,000-17,999 RPM        14      202500.0 277679.0  500000.0     1067.0      700.0      580.0                   0
+4) 10,000-14,999 RPM        20      140000.0 274073.0  450000.0     1524.0      762.0      711.0                   7
+ 5) under 10,000 RPM        12      156995.0 284913.0  450000.0     1524.0      762.0      711.0                   8
+
+[32] 32 - Shortlist: actual machines in the two recommended RPM tiers
+------------------------------------------------------------------------------
+            Machine Name  max_spindle_rpm  price_low_usd  price_mid_usd  price_high_usd price_type  x_travel_mm  y_travel_mm  z_travel_mm         rpm_tier
+           Hurco VMX30Ui          12000.0       150000.0       175000.0        200000.0   estimate        762.0        508.0        521.0 tier 4 (10k-15k)
+           Hurco VMX42Ui          12000.0       180000.0       210000.0        240000.0   estimate       1067.0        610.0        521.0 tier 4 (10k-15k)
+          Hurco VMX42SWi          12000.0       200000.0       235000.0        270000.0   estimate       1067.0        610.0        610.0 tier 4 (10k-15k)
+         Mazak VC-Ez 20X          12000.0       200000.0       237500.0        275000.0   estimate        813.0        508.0        508.0 tier 4 (10k-15k)
+          Haas UMC-750SS          12000.0       239995.0       239995.0        239995.0     listed        762.0        508.0        508.0 tier 4 (10k-15k)
+            Hurco VC600i          12000.0       250000.0       285000.0        320000.0   estimate        820.0        550.0        500.0 tier 4 (10k-15k)
+         Haas UMC-1000SS          12000.0       286995.0       286995.0        286995.0     listed       1016.0        635.0        635.0 tier 4 (10k-15k)
+         Hurco VMX42SRTi          12000.0       250000.0       290000.0        330000.0   estimate       1067.0        610.0        610.0 tier 4 (10k-15k)
+           Hurco VMX60Ui          12000.0       250000.0       290000.0        330000.0   estimate       1524.0        660.0        520.0 tier 4 (10k-15k)
+          Hurco VMX60SWi          12000.0       270000.0       310000.0        350000.0   estimate       1524.0        661.0        610.0 tier 4 (10k-15k)
+       Haas UMC-1000SS-P          12000.0       311995.0       311995.0        311995.0     listed       1016.0        635.0        635.0 tier 4 (10k-15k)
+     Haas UMC-1500SS-DUO          12000.0       311995.0       311995.0        311995.0     listed       1524.0        508.0        508.0 tier 4 (10k-15k)
+         Hurco VMX30UHSi          20000.0       200000.0       230000.0        260000.0   estimate        762.0        508.0        521.0 tier 2 (18k-24k)
+Brother Speedio HU550Xd1          20000.0       220000.0       260000.0        300000.0   estimate        550.0        500.0        400.0 tier 2 (18k-24k)
+         Hurco VMX42UHSi          18000.0       230000.0       265000.0        300000.0   estimate       1067.0        610.0        520.0 tier 2 (18k-24k)
+   Hyundai WIA KF7300/5A          20000.0       250000.0       300000.0        350000.0   estimate        765.0        650.0        520.0 tier 2 (18k-24k)
+         Matsuura MX-520          20000.0       250000.0       300000.0        350000.0   estimate        630.0        560.0        510.0 tier 2 (18k-24k)
+           Hurco BX 400i          20000.0       250000.0       315000.0        380000.0   estimate       1020.0        700.0        500.0 tier 2 (18k-24k)
+   Hyundai WIA KF3500/5A          20000.0       250000.0       315000.0        380000.0   estimate        600.0        655.0        500.0 tier 2 (18k-24k)
+            Hurco BX40Ui          20000.0       280000.0       320000.0        360000.0   estimate        950.0        550.0        500.0 tier 2 (18k-24k)
+            Hermle C 250          20000.0       270000.0       335000.0        400000.0   estimate        600.0        550.0        450.0 tier 2 (18k-24k)
+       DMG Mori DMX 60 U          20000.0       275000.0       337500.0        400000.0   estimate        600.0        600.0        510.0 tier 2 (18k-24k)
+  Kitamura Mytrunnion-4G          20000.0       280000.0       340000.0        400000.0   estimate        610.0        610.0        550.0 tier 2 (18k-24k)
+          Hermle B 300 U          20000.0       280000.0       350000.0        420000.0   estimate        650.0        560.0        470.0 tier 2 (18k-24k)
+       Hermle C 250 GEN2          20000.0       280000.0       350000.0        420000.0   estimate        600.0        550.0        450.0 tier 2 (18k-24k)
+         Spinner U5-1530          20000.0       280000.0       350000.0        420000.0   estimate       1530.0        530.0        465.0 tier 2 (18k-24k)
+
+[33] 33
+------------------------------------------------------------------------------
+         Machine Name  max_spindle_rpm  price_mid_usd  x_travel_mm y_travel_mm z_travel_mm
+      Chiron FZ 08 FX          42000.0       330000.0          NaN        None        None
+Kitamura MedCenter5AX          30000.0       315000.0          NaN        None        None
+       Okuma MU-S600V          12000.0       275000.0        700.0        None        None
+      Mazak VC-Ez 26X          12000.0       262500.0          NaN        None        None
+        Mazak VC-Ez X          12000.0       225000.0          NaN        None        None
+
+[34] 34 - Details of shortlisted machines
+------------------------------------------------------------------------------
+                                                                     URL          Machine Name       Manufacturer Brand                 Category                                                                                                                                                                                              Description               price_text  price_usd  price_low_usd  price_high_usd  price_mid_usd price_type  x_travel_mm y_travel_mm z_travel_mm max_table_load_kg machine_weight_kg  spindle_power_kw  max_spindle_rpm  tool_capacity spindle_taper
+               https://www.machinetoolindex.com/machines/chiron-fz-08-fx       Chiron FZ 08 FX             Chiron  None 5 Axis Machining Centers                        This model was not found in Chiron's current lineup when we checked on 2026-10-03 . It may be a superseded or older model; the specifications below are as we last recorded them. Est. $280,000 - $380,000   330000.0       280000.0        380000.0       330000.0   estimate          NaN        None        None              None              None               NaN          42000.0           30.0       HSK-E32
+https://www.machinetoolindex.com/machines/kitamura-kitamura-medcenter5ax Kitamura MedCenter5AX Kitamura Machinery  None 5 Axis Machining Centers                                                                  Our best estimate for a 5-axis machining center in this class — not a quote from Kitamura Machinery. Configuration moves it a long way. Est. $250,000 - $380,000   315000.0       250000.0        380000.0       315000.0   estimate          NaN        None        None              None              None              18.6          30000.0          120.0       HSK-E40
+                https://www.machinetoolindex.com/machines/okuma-mu-s600v        Okuma MU-S600V              Okuma  None 5 Axis Machining Centers                                                                               Our best estimate for a 5-axis machining center in this class — not a quote from Okuma. Configuration moves it a long way. Est. $200,000 - $350,000   275000.0       200000.0        350000.0       275000.0   estimate        700.0        None        None              None              None               NaN          12000.0            NaN           NaN
+               https://www.machinetoolindex.com/machines/mazak-vc-ez-26x       Mazak VC-Ez 26X     Yamazaki Mazak  None 5 Axis Machining Centers This model was not found in Yamazaki Mazak's current lineup when we checked on 2026-10-02 ( lineup page ). It may be a superseded or older model; the specifications below are as we last recorded them. Est. $225,000 - $300,000   262500.0       225000.0        300000.0       262500.0   estimate          NaN        None        None              None              None              15.0          12000.0            NaN    CAT No. 40
+                 https://www.machinetoolindex.com/machines/mazak-vc-ez-x         Mazak VC-Ez X     Yamazaki Mazak  None 5 Axis Machining Centers                                                                      Our best estimate for a 5-axis machining center in this class — not a quote from Yamazaki Mazak. Configuration moves it a long way. Est. $175,000 - $275,000   225000.0       175000.0        275000.0       225000.0   estimate          NaN        None        None              None              None               NaN          12000.0           30.0     CAT No.40
+
+FINISHED. Database opened read-only; no files were modified.

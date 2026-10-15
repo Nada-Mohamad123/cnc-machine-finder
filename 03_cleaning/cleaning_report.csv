@@ -1,0 +1,22 @@
+﻿issue,rows_affected,action
+Column(s) ['Brand'] are >99% empty (Brand has only 4 values),3955,Dropped
+Manufacturer spelling variants (226 -> 219 names),23,Merged to the most frequent spelling
+Category written 'Cnc' instead of 'CNC',2794,Standardised
+"Same Machine Name + Manufacturer appears twice (different URLs, e.g. ANCA FX7)",6,Kept (different variants) and flagged in is_name_duplicate
+"machine_weight_kg < 100 kg (unit error at source, e.g. 8 kg)",2,Set to missing
+Prices are mostly ESTIMATES by the website (1480 estimate vs 84 listed),1480,Added price_type + has_price. Always label price charts as 'estimated'
+Very wide price ranges (high > 5x low),6,Kept; flagged via price_spread_ratio
+"spindle_taper has many spellings (HSK-A63, HSK 63-A, ...)",1045,Added taper_family (6 groups)
+Extreme values in x_travel_mm (log-IQR x1.5),17,Kept (large/special machines are real); flagged
+Extreme values in max_spindle_rpm (log-IQR x1.5),32,Kept (large/special machines are real); flagged
+Extreme values in max_table_load_kg (log-IQR x1.5),1,Kept (large/special machines are real); flagged
+Extreme values in price_usd (log-IQR x1.5),26,Kept (large/special machines are real); flagged
+x_travel_mm missing,1430,Left as NULL (never guessed)
+y_travel_mm missing,2363,Left as NULL (never guessed)
+z_travel_mm missing,1727,Left as NULL (never guessed)
+max_table_load_kg missing,3063,Left as NULL (never guessed)
+machine_weight_kg missing,2144,Left as NULL (never guessed)
+spindle_power_kw missing,2912,Left as NULL (never guessed)
+max_spindle_rpm missing,1672,Left as NULL (never guessed)
+tool_capacity missing,3216,Left as NULL (never guessed)
+Only part of the website was scraped (categories in file),6,See categories chart; website has 19

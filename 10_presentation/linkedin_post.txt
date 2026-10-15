@@ -1,0 +1,19 @@
+We just finished a data project that started with a simple question: how does someone choose a CNC machine when they have a fixed budget?
+
+The information exists, but it is spread over thousands of pages, written with mixed units, and most of the prices are estimates. So we collected it ourselves.
+
+What we did:
+- Scraped 3,955 machine pages from machinetoolindex.com with Python and BeautifulSoup
+- Cleaned 5,213 raw columns into one comparable table (mm, kg, kW, rpm)
+- Wrote 34 SQL queries on a SQLite database
+- Built a Streamlit dashboard where you enter a budget and a minimum machine size and get a shortlist
+
+Two things we found:
+1. Machine type sets the price level. The median price goes from $200K for lathes to $950K for boring machines.
+2. Size and weight follow price closely (rank correlation about 0.75). Spindle speed does not (about 0.34).
+
+One caution that we put on every page of the dashboard: 95% of the prices we found are the website's own estimates, not quotes. They are good for shortlisting, but you still need a real quotation before buying.
+
+We covered 6 of the website's 19 categories, so collecting the rest is our next step.
+
+#DataAnalytics #WebScraping #Python #SQL #Streamlit #DataVisualization

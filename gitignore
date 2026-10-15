@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large file that is rebuilt by 03_cleaning/clean_to_sqlite.py
+07_data_outputs/wide/
+
+# Never upload passwords or local settings
+to_mysql.py
+.env
+*.zip
+Thumbs.db
+.DS_Store
